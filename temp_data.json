@@ -6,6 +6,10 @@
         {
             "user":"",
             "votedAt":""
+        },
+        {
+            "user":"",
+            "votedAt":""
         }
     ]
 }
