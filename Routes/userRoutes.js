@@ -27,6 +27,8 @@ router.post('/signup' , async (req,res) =>{
 
         res.status(200).json({response: response , token:token})
     } catch (error) {
-        
+        console.log(error)
+
+        res.status(500).json({error:"Internal server Error"});
     }
 })
