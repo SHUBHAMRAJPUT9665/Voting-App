@@ -1,0 +1,11 @@
+{
+    "name":"shubham",
+    "party":"Code",
+    "age":22,
+    "votes":[
+        {
+            "user":"",
+            "votedAt":""
+        }
+    ]
+}
