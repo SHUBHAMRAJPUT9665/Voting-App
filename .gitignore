@@ -1,4 +1,7 @@
 # Node.js modules
+
+.env
+
 node_modules/
 # Logs
 logs
