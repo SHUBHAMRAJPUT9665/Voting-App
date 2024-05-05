@@ -21,7 +21,7 @@ const candidateSchema = new mongoose.Schema({
                 required:true
             },
             votedAt:{
-                types:Date,
+                type:Date, // <-- Corrected typo here
                 default:Date.now()
             }
         }
@@ -32,6 +32,6 @@ const candidateSchema = new mongoose.Schema({
     }
 })
 
-const Candidate = mongoose.model("Usert" , candidateSchema);
+const Candidate = mongoose.model("Candidate" , candidateSchema); // <-- Corrected model name here
 
 module.exports = Candidate;

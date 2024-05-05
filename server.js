@@ -1,17 +1,22 @@
-const express = require("express")
+const express = require("express");
 const app = express();
 require('dotenv').config();
+const db = require('./db');
 
+// Remove the explicit import of body-parser
 
-const bodyParser = require('body-parser');
-// body-parser
-app.use(bodyParser.json());
-PORT = process.env.PORT || 8000
+// body-parser is now bundled with Express, so you can directly use it like this:
+app.use(express.json()); // This line replaces bodyParser.json()
 
-app.get('/',(req,res)=>{
-    res.send("hii welcome");
-})
+const PORT = process.env.PORT || 8000;
+const {jwtAuthMiddleware} = require('./jwt')
 
-app.listen(PORT,()=>{
-    console.log(`server is runing on PORT ${PORT}`)
-})
+const userRoutes = require('./Routes/userRoutes');
+const candiateRoutes = require('./Routes/candidateRoutes')
+
+app.use('/user', userRoutes);
+app.use('/candidate',jwtAuthMiddleware,candiateRoutes)
+
+app.listen(PORT, () => {
+    console.log(`server is running on PORT ${PORT}`);
+});
