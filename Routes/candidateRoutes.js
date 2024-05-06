@@ -39,7 +39,7 @@ router.put('/:candidateID', jwtAuthMiddleware, async (req, res) => {
         if(!checkAdminRole(req.user.id)){
             return res.status(404).json({message:"user has not admin role"})
         }
-        const userId = req.user.id; // Extract the id from the token
+        const candidateId = req.user.id; // Extract the id from the token
         const { currentPassword, newPassword } = req.body; // Extract current and new passwords from request body
 
         // Check if currentPassword and newPassword are present in the request body
