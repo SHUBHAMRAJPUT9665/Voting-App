@@ -91,7 +91,6 @@ router.get('/profile', jwtAuthMiddleware, async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 })
-
 router.put('/profile/password', jwtAuthMiddleware, async (req, res) => {
     try {
         const userId = req.user.id; // Extract the id from the token

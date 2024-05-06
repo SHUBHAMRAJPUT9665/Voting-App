@@ -15,7 +15,7 @@ const userRoutes = require('./Routes/userRoutes');
 const candiateRoutes = require('./Routes/candidateRoutes')
 
 app.use('/user', userRoutes);
-app.use('/candidate',jwtAuthMiddleware,candiateRoutes)
+app.use('/candidate',candiateRoutes)
 
 app.listen(PORT, () => {
     console.log(`server is running on PORT ${PORT}`);
