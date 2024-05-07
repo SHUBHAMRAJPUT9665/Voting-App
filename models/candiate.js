@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+// candidate schema
 
 const candidateSchema = new mongoose.Schema({
     name:{
