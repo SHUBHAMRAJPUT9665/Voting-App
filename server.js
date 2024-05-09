@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 require('dotenv').config();
-const db = require('./db');
 
 // Remove the explicit import of body-parser
 
@@ -9,7 +8,6 @@ const db = require('./db');
 app.use(express.json()); // This line replaces bodyParser.json()
 
 const PORT = process.env.PORT || 8000;
-const {jwtAuthMiddleware} = require('./jwt')
 
 const userRoutes = require('./Routes/userRoutes');
 const candiateRoutes = require('./Routes/candidateRoutes')
