@@ -22,7 +22,7 @@ const candidateSchema = new mongoose.Schema({
                 required:true
             },
             votedAt:{
-                type:Date, // <-- Corrected typo here
+                type:Date,
                 default:Date.now()
             }
         }
