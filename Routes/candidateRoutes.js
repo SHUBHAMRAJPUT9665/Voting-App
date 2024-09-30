@@ -5,6 +5,7 @@ const {jwtAuthMiddleware, generateToken} = require('../jwt');
 const Candidate = require('../models/candiate');
 
 
+
 const checkAdminRole = async (userID) => {
    try{
         const user = await User.findById(userID);
